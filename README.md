@@ -4,6 +4,8 @@ This repository serves as a base to hold docker configuration files that can ser
 
 If you're on **Azure**: please see [our azure-containers repository](https://github.com/Panintelligence/azure-containers).
 
+----
+**Table of Contents:**
 - [Deploying our docker containers](#deploying-our-docker-containers)
 - [Getting access](#getting-access)
 - [Deployment Methods](#deployment-methods)
@@ -18,6 +20,8 @@ If you're on **Azure**: please see [our azure-containers repository](https://git
   - [Further deployment configuration](#further-deployment-configuration)
 - [Gotchas](#gotchas)
 - [Getting Help](#getting-help)
+
+----
 
 # Getting access
 
