@@ -4,6 +4,21 @@ This repository serves as a base to hold docker configuration files that can ser
 
 If you're on **Azure**: please see [our azure-containers repository](https://github.com/Panintelligence/azure-containers).
 
+- [Deploying our docker containers](#deploying-our-docker-containers)
+- [Getting access](#getting-access)
+- [Deployment Methods](#deployment-methods)
+  - [Single Container](#single-container)
+    - [Using docker CLI](#using-docker-cli)
+    - [Using docker-compose](#using-docker-compose)
+  - [Single Container + External Database](#single-container--external-database)
+    - [Using docker CLI](#using-docker-cli-1)
+    - [Using docker-compose](#using-docker-compose-1)
+  - [Multiple Containers](#multiple-containers)
+    - [Using docker-compose](#using-docker-compose-2)
+  - [Further deployment configuration](#further-deployment-configuration)
+- [Gotchas](#gotchas)
+- [Getting Help](#getting-help)
+
 # Getting access
 
 Please email support@panintelligence.com with the following information:
@@ -112,7 +127,7 @@ cd docker-deployments
 docker-compose -f docker-compose/multiple.yml up -d 
 ```
 
-# Further deployment configuration
+## Further deployment configuration
 For additional configuration options, see our [configuration Environment Variables documentation](https://panintelligence.atlassian.net/wiki/spaces/PD/pages/34374123/Environment+Variables).
 
 # Gotchas
