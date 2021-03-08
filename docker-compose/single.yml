@@ -13,3 +13,4 @@ services:
       - /docker/volumes/panintelligence/keys:/var/panintelligence/Dashboard/keys
       - /docker/volumes/panintelligence/licence.xml:/var/panintelligence/Dashboard/tomcat/webapps/panLicenceManager/WEB-INF/classes/licence.xml
       - /docker/volumes/panintelligence/data:/var/panintelligence/Dashboard/db/data
+      - /docker/volumes/panintelligence/themes:/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/themes
