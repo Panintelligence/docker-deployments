@@ -77,7 +77,7 @@ For this method, you need the following:
 * A licence from your account manager
 * Access to a filesystem of some sort to persist your custom themes
 * A MariaDB or MySQL database
-  * We require the database to be case insensitive, i.e. the `my.cnf` file must have `lower_case_table_names = 1`
+  * We require the database to be case insensitive, i.e. the `my.cnf` file must have `lower_case_table_names = 1` under the `mysqld` section.
 
 ### Using docker CLI
 ```bash
