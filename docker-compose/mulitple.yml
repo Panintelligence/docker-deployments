@@ -24,7 +24,7 @@ services:
     volumes:
       - /docker/volumes/panintelligence/keys:/var/panintelligence/Dashboard/keys
     environment:
-      - PI_DB_HOST=your.mariadb.com"
+      - PI_DB_HOST=your.mariadb.com
       - PI_DB_PORT=3306
       - PI_DB_USERNAME=root
       - PI_DB_PASSWORD=SuperSecurePasswordHere
