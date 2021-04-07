@@ -18,6 +18,11 @@ If you're on **Azure**: please see [our azure-containers repository](https://git
   - [Multiple Containers](#multiple-containers)
     - [Using docker-compose](#using-docker-compose-2)
   - [Further deployment configuration](#further-deployment-configuration)
+- [Upgrading](#upgrading)
+  - [Using docker CLI](#using-docker-cli-2)
+    - [Single Container](#single-container-1)
+    - [Single Container + External Database](#single-container--external-database-1)
+  - [Using docker-compose](#using-docker-compose-3)
 - [Gotchas](#gotchas)
 - [Getting Help](#getting-help)
 
@@ -133,6 +138,49 @@ docker-compose -f docker-compose/multiple.yml up -d
 
 ## Further deployment configuration
 For additional configuration options, see our [configuration Environment Variables documentation](https://panintelligence.atlassian.net/wiki/spaces/PD/pages/34374123/Environment+Variables).
+
+
+# Upgrading
+Provided your volumes are set up as we've recommended under the [Deployment Methods](#deployment-methods), upgrading is as simple as replacing the old container with a new one.
+
+## Using docker CLI
+### Single Container
+```bash
+docker stop old_container
+docker pull panintelligence/dashboard:latest
+docker run [all the options] panintelligence/dashboard:latest
+```
+
+Instead of `:latest` you might want to use the specific version (e.g. `2021_03_25`).
+
+**Notes:**
+* For `[all the options]`, see [Single Container -> Using docker CLI](#using-docker-cli);
+* `run` does a `pull` automatically if you don't have that tag locally, but if you're using `latest` then you need to force the pull.
+
+### Single Container + External Database
+```bash
+docker stop old_container
+docker pull panintelligence/dashboard-marialess:latest
+docker run [all the options] panintelligence/dashboard-marialess:latest
+```
+
+Instead of `:latest` you might want to use the specific version (e.g. `2021_03_25`).
+
+**Notes:**
+* For `[all the options]`, see [Single Container + External Database -> Using docker CLI](#using-docker-cli-1);
+* `run` does a `pull` automatically if you don't have that tag locally, but if you're using `latest` then you need to force the pull.
+
+## Using docker-compose
+Edit the docker-compose file you're using and replace the tag (e.g. change `2021_01_28` to `2021_03_25`).
+If your compose file used the `:latest` tags you don't need to change it at all.
+
+Once you've changed the tag (if required), you can run:
+```bash
+docker-compose pull
+docker-compose up
+```
+
+**Note:** `up` does a `pull` automatically if you don't have that tag locally, but if you're using `latest` then you need to force the pull.
 
 # Gotchas
 * **Kubernetes**'s own generated environment variables may clash with the some configuration environment variables, if you name your containers similarly.
