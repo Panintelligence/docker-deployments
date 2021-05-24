@@ -12,6 +12,7 @@ services:
     volumes:
       - /docker/volumes/panintelligence/keys:/var/panintelligence/Dashboard/keys
       - /docker/volumes/panintelligence/themes:/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/themes
+      - /docker/volumes/panintelligence/svg:/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/svg
       - /docker/volumes/panintelligence/licence.xml:/var/panintelligence/Dashboard/tomcat/webapps/panLicenceManager/WEB-INF/classes/licence.xml
     environment:
       - PI_DB_HOST=your.mariadb.com
