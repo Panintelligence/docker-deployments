@@ -179,8 +179,9 @@ If your compose file used the `:latest` tags you don't need to change it at all.
 Once you've changed the tag (if required), you can run:
 ```bash
 docker-compose pull
-docker-compose up
+docker-compose up -d
 ```
+If you
 
 **Note:** `up` does a `pull` automatically if you don't have that tag locally, but if you're using `latest` then you need to force the pull.
 
