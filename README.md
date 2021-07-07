@@ -60,6 +60,7 @@ docker run \
     -dt \
     -v /volumes/panintelligence/data:/var/panintelligence/Dashboard/db/data \
     -v /volumes/panintelligence/themes:/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/themes \
+    -v /volumes/panintelligence/svg:/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/svg \
     -v /volumes/panintelligence/licence.xml:/var/panintelligence/Dashboard/tomcat/webapps/panLicenceManager/WEB-INF/classes/licence.xml \
     --name pi_dashboard \
     panintelligence/dashboard:latest
@@ -96,6 +97,7 @@ docker run \
     -e "PI_DB_USERNAME=root" \
     -e "PI_DB_PASSWORD=SuperSecurePasswordHere" \
     -v /volumes/panintelligence/themes:/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/themes \
+    -v /volumes/panintelligence/svg:/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/svg \
     -v /volumes/panintelligence/licence.xml:/var/panintelligence/Dashboard/tomcat/webapps/panLicenceManager/WEB-INF/classes/licence.xml \
     --name pi_dashboard \
     panintelligence/dashboard-marialess:latest
@@ -177,8 +179,9 @@ If your compose file used the `:latest` tags you don't need to change it at all.
 Once you've changed the tag (if required), you can run:
 ```bash
 docker-compose pull
-docker-compose up
+docker-compose up -d
 ```
+If you
 
 **Note:** `up` does a `pull` automatically if you don't have that tag locally, but if you're using `latest` then you need to force the pull.
 
