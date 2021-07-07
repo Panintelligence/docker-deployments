@@ -91,10 +91,10 @@ mkdir -p /volumes/panintelligence/themes # to persist the application themes
 docker run \
     -p 0.0.0.0:8224:8224 \
     -dt \
-    -e PI_DB_HOST="your.mariadb.com" \
-    -e PI_DB_PORT=3306 \
-    -e PI_DB_USERNAME="root" \
-    -e PI_DB_PASSWORD="SuperSecurePasswordHere" \
+    -e "PI_DB_HOST=your.mariadb.com" \
+    -e "PI_DB_PORT=3306" \
+    -e "PI_DB_USERNAME=root" \
+    -e "PI_DB_PASSWORD=SuperSecurePasswordHere" \
     -v /volumes/panintelligence/themes:/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/themes \
     -v /volumes/panintelligence/licence.xml:/var/panintelligence/Dashboard/tomcat/webapps/panLicenceManager/WEB-INF/classes/licence.xml \
     --name pi_dashboard \
