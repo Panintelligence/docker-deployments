@@ -51,6 +51,7 @@ services:
       - /docker/volumes/panintelligence/keys:/var/panintelligence/Dashboard/keys
       - /docker/volumes/panintelligence/themes:/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/themes
       - /docker/volumes/panintelligence/svg:/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/svg
+      - /docker/volumes/panintelligence/custom_jdbc_drivers:/var/panintelligence/Dashboard/tomcat/custom_jdbc_drivers
     environment:
       - PI_DB_HOST=your.mariadb.com
       - PI_DB_PORT=3306
