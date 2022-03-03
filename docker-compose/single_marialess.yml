@@ -7,8 +7,6 @@ services:
     image: panintelligence/dashboard-marialess:latest
     ports:
       - "8224:8224"
-    expose:
-      - "9918"
     volumes:
       - /docker/volumes/panintelligence/keys:/var/panintelligence/Dashboard/keys
       - /docker/volumes/panintelligence/themes:/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/themes
