@@ -96,6 +96,7 @@ docker run \
     -e "PI_DB_PORT=3306" \
     -e "PI_DB_USERNAME=root" \
     -e "PI_DB_PASSWORD=SuperSecurePasswordHere" \
+    -e "PI_EXTERNAL_DB=true" \
     -v /volumes/panintelligence/themes:/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/themes \
     -v /volumes/panintelligence/svg:/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/svg \
     -v /volumes/panintelligence/licence.xml:/var/panintelligence/Dashboard/tomcat/webapps/panLicenceManager/WEB-INF/classes/licence.xml \
