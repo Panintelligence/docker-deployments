@@ -8,6 +8,7 @@ If you're on **Azure**: please see [our azure-containers repository](https://git
 **Table of Contents:**
 - [Deploying our docker containers](#deploying-our-docker-containers)
 - [Getting access](#getting-access)
+- [Requirements](#requirements)
 - [Deployment Methods](#deployment-methods)
   - [Single Container](#single-container)
     - [Using docker CLI](#using-docker-cli)
@@ -27,6 +28,9 @@ If you're on **Azure**: please see [our azure-containers repository](https://git
 - [Getting Help](#getting-help)
 
 ----
+
+# Requirements
+Any system with `docker` installed or another container platform like Kubernetes.
 
 # Getting access
 
