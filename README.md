@@ -19,7 +19,7 @@ If you're on **Azure**: please see [our azure-containers repository](https://git
   - [Multiple Containers](#multiple-containers)
     - [Using docker-compose](#using-docker-compose-2)
   - [Mariadb_sql_injector](#mariadb-sql-injector container)
-    - [Using docker-compose](#)
+    - [Using docker-compose](#using-docker-compose-3)
   - [Further deployment configuration](#further-deployment-configuration)
 - [Upgrading](#upgrading)
   - [Using docker CLI](#using-docker-cli-2)
@@ -203,14 +203,14 @@ If you
 We have created a mariadb sql injector container to run sql commands inside the database. This is useful if you're running on serverless environments and have restricted access to the backend.
 ### Using docker-compose
 Environment variables:
-  - PI_DB_SCHEMA_NAME=<DB schema name>
-  - PI_DB_PASSWORD=<DB password>
-  - PI_DB_USERNAME=<DB username>
-  - PI_DB_HOST=<DB host>
+  - PI_DB_SCHEMA_NAME=DBschema name
+  - PI_DB_PASSWORD=DB password
+  - PI_DB_USERNAME=DB username
+  - PI_DB_HOST=DB host
   - SQL_INJECT_BOOL=true
-  - SQL_FILE_NAME=<DB sql file>
+  - SQL_FILE_NAME=DB sql file
 ### Volumes:
- - <localpath of where your sql files>:/var/sql
+ - localpath of where your sql files:/var/sql
 
 
 
