@@ -18,7 +18,7 @@ If you're on **Azure**: please see [our azure-containers repository](https://git
     - [Using docker-compose](#using-docker-compose-1)
   - [Multiple Containers](#multiple-containers)
     - [Using docker-compose](#using-docker-compose-2)
-  - [Mariadb_sql_injector](#mariadb-sql-injector container)
+  - [Mariadb_sql_injector](#mariadb-sql-injector-container)
     - [Using docker-compose](#using-docker-compose-3)
   - [Further deployment configuration](#further-deployment-configuration)
 - [Upgrading](#upgrading)
