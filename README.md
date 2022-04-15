@@ -197,5 +197,11 @@ If you
 * **The Database** must be case insensitive, i.e. the `my.cnf` file must have `lower_case_table_names = 1`
   * You'll notice this if in the logs the dashboard complains about some tables being missing while the tables are in the database
 
+# mariadb-sql-injector container
+We have created a mariadb sql injector container to run sql commands inside the database. This is useful if you're running on serverless environments and have restricted access to the backend.
+
+
+
+
 # Getting Help
 Contact support@panintelligence.com with any query or issue.
