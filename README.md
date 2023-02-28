@@ -127,7 +127,7 @@ docker-compose -f docker-compose/single_marialess.yml up -d
 For this method, you need the following:
 * The container images:
   * [panintelligence/renderer](https://hub.docker.com/r/panintelligence/renderer)
-  * [panintelligence/excel](https://hub.docker.com/r/panintelligence/excel)
+  * [panintelligence/excel-reader](https://hub.docker.com/r/panintelligence/excel-reader)
   * [panintelligence/scheduler](https://hub.docker.com/r/panintelligence/scheduler) (if your licence includes piReports)
   * [panintelligence/pirana](https://hub.docker.com/r/panintelligence/pirana) (if your licence includes piAnalytics)
   * [panintelligence/server](https://hub.docker.com/r/panintelligence/server)
