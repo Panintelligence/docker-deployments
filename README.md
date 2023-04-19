@@ -4,33 +4,6 @@ This repository serves as a base to hold docker configuration files that can ser
 
 If you're on **Azure**: please see [our azure-containers repository](https://github.com/Panintelligence/azure-containers).
 
-----
-**Table of Contents:**
-- [Deploying our docker containers](#deploying-our-docker-containers)
-- [Getting access](#getting-access)
-- [Requirements](#requirements)
-- [Deployment Methods](#deployment-methods)
-  - [Single Container](#single-container)
-    - [Using docker CLI](#using-docker-cli)
-    - [Using docker-compose](#using-docker-compose)
-  - [Single Container + External Database](#single-container--external-database)
-    - [Using docker CLI](#using-docker-cli-1)
-    - [Using docker-compose](#using-docker-compose-1)
-  - [Multiple Containers](#multiple-containers)
-    - [Using docker-compose](#using-docker-compose-2)
-  - [Mariadb_sql_injector](#mariadb-sql-injector-container)
-    - [Using docker-compose](#using-docker-compose-3)
-  - [Further deployment configuration](#further-deployment-configuration)
-- [Upgrading](#upgrading)
-  - [Using docker CLI](#using-docker-cli-2)
-    - [Single Container](#single-container-1)
-    - [Single Container + External Database](#single-container--external-database-1)
-  - [Using docker-compose](#using-docker-compose-3)
-- [Gotchas](#gotchas)
-- [Getting Help](#getting-help)
-
-----
-
 # Requirements
 Any system with `docker` installed or another container platform like Kubernetes.
 
@@ -44,86 +17,11 @@ Please email support@panintelligence.com with the following information:
 
 # Deployment Methods
 
-You have 3 options for deploying our containers, single-container, single-container + external database, multi-containers.
 
-**Note:** none of the links to images will work unless you've been granted access.
+> **Note**
+> None of the links to images will work unless you've been granted access.
 
-## Single Container
-This method is usually useful for proof of concepts.
-
-For this method, you need the following:
-* The [panintelligence/dashboard](https://hub.docker.com/r/panintelligence/dashboard) image
-* A licence from your account manager
-* Access to a filesystem of some sort to persist the application data
-
-### Using docker CLI
-```bash
-mkdir -p /volumes/panintelligence/data   # to persist the application database
-mkdir -p /volumes/panintelligence/themes # to persist the application themes
-# you'll need a licence.xml file inside /volumes/panintelligence/
-docker run \
-    -p 0.0.0.0:8224:8224 \
-    -dt \
-    -v /volumes/panintelligence/data:/var/panintelligence/Dashboard/db/data \
-    -v /volumes/panintelligence/themes:/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/themes \
-    -v /volumes/panintelligence/svg:/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/svg \
-    -v /volumes/panintelligence/licence.xml:/var/panintelligence/Dashboard/tomcat/webapps/panLicenceManager/WEB-INF/classes/licence.xml \
-    --name pi_dashboard \
-    panintelligence/dashboard:latest
-```
-The commands above apply the licence via a volume, alternatively, the licence can be passed via environment variables: `PI_LICENCE=<licence>...</licence>` or `PI_LICENCE_URL=https://link/to/licence.xml`.
-
-### Using docker-compose
-Clone this repository and edit [single.yml](docker-compose/single.yml) according to your needs (particularly the volumes section).
-
-Then stand up the service like so:
-```bash
-cd docker-deployments
-docker-compose -f docker-compose/single.yml up -d 
-```
-
-
-## Single Container + External Database
-For this method, you need the following:
-* The [panintelligence/dashboard-marialess](https://hub.docker.com/r/panintelligence/dashboard-marialess) image
-* A licence from your account manager
-* Access to a filesystem of some sort to persist your custom themes
-* A MariaDB or MySQL database
-  * We require the database to be case insensitive, i.e. the `my.cnf` file must have `lower_case_table_names = 1` under the `mysqld` section.
-
-### Using docker CLI
-```bash
-mkdir -p /volumes/panintelligence/themes # to persist the application themes
-# you'll need a licence.xml file inside /volumes/panintelligence/
-docker run \
-    -p 0.0.0.0:8224:8224 \
-    -dt \
-    -e "PI_DB_HOST=your.mariadb.com" \
-    -e "PI_DB_PORT=3306" \
-    -e "PI_DB_USERNAME=root" \
-    -e "PI_DB_PASSWORD=SuperSecurePasswordHere" \
-    -e "PI_EXTERNAL_DB=true" \
-    -v /volumes/panintelligence/themes:/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/themes \
-    -v /volumes/panintelligence/svg:/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/svg \
-    -v /volumes/panintelligence/licence.xml:/var/panintelligence/Dashboard/tomcat/webapps/panLicenceManager/WEB-INF/classes/licence.xml \
-    --name pi_dashboard \
-    panintelligence/dashboard-marialess:latest
-```
-Replace the values for `PI_DB_HOST`,  `PI_DB_PORT`, `PI_DB_USERNAME` and `PI_DB_PASSWORD` accordingly.
-
-The commands above apply the licence via a volume, alternatively, the licence can be passed via environment variables: `PI_LICENCE=<licence>...</licence>` or `PI_LICENCE_URL=https://link/to/licence.xml`.
-
-
-### Using docker-compose
-Clone this repository and edit [single_marialess.yml](docker-compose/single_marialess.yml) according to your needs (particularly the volumes section and the database connection environment variables).
-
-Then stand up the service like so:
-```bash
-cd docker-deployments
-docker-compose -f docker-compose/single_marialess.yml up -d 
-```
-
-## Multiple Containers
+## Containers
 For this method, you need the following:
 * The container images:
   * [panintelligence/renderer](https://hub.docker.com/r/panintelligence/renderer)
@@ -133,16 +31,17 @@ For this method, you need the following:
   * [panintelligence/server](https://hub.docker.com/r/panintelligence/server)
 * A licence from your account manager
 * Access to a filesystem of some sort to persist your custom themes and the shared keys between `server` and `scheduler`
-* A MariaDB or MySQL database
-  * We require the database to be case insensitive, i.e. the `my.cnf` file must have `lower_case_table_names = 1`
 
 ### Using docker-compose
-Clone this repository and edit [multiple.yml](docker-compose/multiple.yml) according to your needs (particularly the volumes section, the licence environment variable on `server` and the database connection environment variables for both `server` and `scheduler`).
+Clone this repository and edit [.env](docker-compose/example/.env) according to your needs.
+
+You may also wish to edit the [docker-compose.yml](docker-compose/example/docker-compose.yml)
+To modify the load balancer config, please edit [haproxy.cfg](docker-compose/example/haproxy/haproxy.cfg)
 
 Then stand up the service like so:
 ```bash
-cd docker-deployments
-docker-compose -f docker-compose/multiple.yml up -d 
+cd <code source directory>/docker-compose/example
+docker-compose up -d
 ```
 
 ## Further deployment configuration
@@ -150,68 +49,40 @@ For additional configuration options, see our [configuration Environment Variabl
 
 
 # Upgrading
-Provided your volumes are set up as we've recommended under the [Deployment Methods](#deployment-methods), upgrading is as simple as replacing the old container with a new one.
+Provided your volumes are set up as we've recommended under the [Deployment Methods](#deployment-methods), 
+upgrading is as simple as replacing the old container with a new one.
 
-## Using docker CLI
-### Single Container
+Instead of `:latest` you might want to use the specific version (e.g. `2023_03_30`).
+
+modify the [.env](docker-compose/example/.env) tags with your new version
+
+especially if you're using `latest` tags, you will want to execute a pull
 ```bash
-docker stop old_container
-docker pull panintelligence/dashboard:latest
-docker run [all the options] panintelligence/dashboard:latest
-```
-
-Instead of `:latest` you might want to use the specific version (e.g. `2021_03_25`).
-
-**Notes:**
-* For `[all the options]`, see [Single Container -> Using docker CLI](#using-docker-cli);
-* `run` does a `pull` automatically if you don't have that tag locally, but if you're using `latest` then you need to force the pull.
-
-### Single Container + External Database
-```bash
-docker stop old_container
-docker pull panintelligence/dashboard-marialess:latest
-docker run [all the options] panintelligence/dashboard-marialess:latest
-```
-
-Instead of `:latest` you might want to use the specific version (e.g. `2021_03_25`).
-
-**Notes:**
-* For `[all the options]`, see [Single Container + External Database -> Using docker CLI](#using-docker-cli-1);
-* `run` does a `pull` automatically if you don't have that tag locally, but if you're using `latest` then you need to force the pull.
-
-## Using docker-compose
-Edit the docker-compose file you're using and replace the tag (e.g. change `2021_01_28` to `2021_03_25`).
-If your compose file used the `:latest` tags you don't need to change it at all.
-
-Once you've changed the tag (if required), you can run:
-```bash
+cd <code source directory>/docker-compose/example
 docker-compose pull
 docker-compose up -d
 ```
-If you
 
-**Note:** `up` does a `pull` automatically if you don't have that tag locally, but if you're using `latest` then you need to force the pull.
 
 # Gotchas
 * **Kubernetes**'s own generated environment variables may clash with the some configuration environment variables, if you name your containers similarly.
 * **Connecting to Oracle Databases**: you might need to pass in a TZ environment variable, otherwise the connection might fail with `ORA-00604: error occurred at recursive SQL level 1 ORA-01882: timezone region not found`. Example:`--env TZ=UTC`
 * **Azure**'s container instances assume the registry is elsewhere, and as such you need to prepend `docker.io` to the image name, i.e. `docker.io/panintelligence/dashboard`
-* **The Database** must be case insensitive, i.e. the `my.cnf` file must have `lower_case_table_names = 1`
+* **The Database** must be case insensitive, i.e. the `my.cnf` file must have `lower_case_table_names = 1` or you have supplied the switch in the command on startup to the db.  an example on [docker-compose.yml](docker-compose/example/docker-compose.yml)
   * You'll notice this if in the logs the dashboard complains about some tables being missing while the tables are in the database
 
 # mariadb-sql-injector container
 We have created a mariadb sql injector container to run sql commands inside the database. This is useful if you're running on serverless environments and have restricted access to the backend.
 ### Using docker-compose
 Environment variables:
-  - PI_DB_SCHEMA_NAME=DBschema name
-  - PI_DB_PASSWORD=DB password
-  - PI_DB_USERNAME=DB username
-  - PI_DB_HOST=DB host
-  - SQL_INJECT_BOOL=true
-  - SQL_FILE_NAME=DB sql file
+  - PI_DB_SCHEMA_NAME=<db schema name>
+  - PI_DB_PASSWORD=<db password>
+  - PI_DB_USERNAME=<db username>
+  - PI_DB_HOST=<db host>
+  - SQL_INJECT_BOOL="true"
+  - SQL_FILE_NAME=<db sql file>
 ### Volumes:
- - localpath of where your sql files:/var/sql
-
+ - <sql source directory>:/var/sql
 
 
 # Getting Help

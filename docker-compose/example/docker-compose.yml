@@ -1,0 +1,76 @@
+version: "3.0"
+services:
+  haproxy:
+    image: haproxy:2.3
+    hostname: local.pi-dash.uk
+    ports:
+      - 80:80
+      #- 443:443
+      - 9915:9915
+      - 8404:8404
+    volumes:
+      - ./haproxy:/usr/local/etc/haproxy
+      - ./certs:/var/certs
+  dashboard:
+    image: ${DASHBOARD_IMAGE}
+    hostname: pan_dash
+    ports:
+      - 8224:8224
+    restart: always
+    environment:
+      PI_DB_HOST: database.pan
+      PI_DB_PASSWORD: panintelligence
+      PI_DB_USERNAME: root
+      PI_DB_SCHEMA_NAME: panintelligence
+      PI_DB_PORT: 3306
+      PI_EXTERNAL_DB: "true"
+      PI_LICENCE: ${LICENCE}
+      PI_TOMCAT_MAX_MEMORY: 1792
+      PI_PROXY_ENABLED: "true"
+      PI_PROXY_SCHEME: http
+      PI_PROXY_HOST: local.pi-dash.uk
+      PI_PROXY_PORT: 80
+      PI_TOMCAT_MAX_TOTAL_DB_CONNECTIONS: 35
+      PI_PROXY_IS_SECURE: "false"
+      PI_TOMCAT_COOKIE_NAME: BENDERISGREAT
+      PI_TOMCAT_FRAME_ANCESTORS: http://local.pi-dash.uk:8000
+      RENDERER_DASHBOARD_URL: http://local.pi-dash.uk:80/pi
+    volumes:
+      - panintelligence_keys:/var/panintelligence/Dashboard/keys/
+      - ./custom_jdbc:/var/panintelligence/Dashboard/tomcat/custom_jdbc_drivers
+  renderer:
+    image: ${RENDERER_IMAGE}
+    environment:
+      RENDERER_LOG_LEVELS: info,error,warn,verbose,debug
+  pirana:
+    image: ${PIRANA_IMAGE}
+  scheduler:
+    image: ${SCHEDULER_IMAGE}
+    environment:
+      SCHEDULER_DASHBOARD_URL: http://local.pi-dash.uk/pi
+      PI_DB_HOST: database.pan
+      PI_DB_PASSWORD: panintelligence
+      PI_DB_USERNAME: root
+      PI_DB_SCHEMA_NAME: panintelligence
+      PI_DB_PORT: 3306
+    volumes:
+      - panintelligence_keys:/var/panintelligence/Dashboard/keys/
+  database:
+    image: mariadb:10.9.4
+    hostname: database.pan
+    environment:
+      MARIADB_ROOT_PASSWORD: panintelligence
+      MYSQL_ROOT_PASSWORD: panintelligence
+      LANG: C.UTF-8
+    command: --lower_case_table_names=1 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    restart: always
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./database_repo:/docker-entrypoint-initdb.d
+  adminer:
+    image: adminer:latest
+    ports:
+      - 8080:8080
+volumes:
+  db_data:
+  panintelligence_keys:
