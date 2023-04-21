@@ -1,0 +1,819 @@
+
+.pi-style__body {
+    background: #ffffff;
+    color: #0C0F14;
+    font-family: "Red Hat Text", sans-serif;
+}
+
+
+.pi-style__body textarea, .pi-style__body textarea.pi-input.with-bg {
+    
+}
+
+
+.pi-style__body textarea[disabled], .pi-style__body textarea.pi-input.with-bg[disabled] {
+    
+}
+
+
+.pi-style__body input, .pi-style__body .pi-input, .pi-style__body .pi-input option, .pi-style__body .inline-placeholder-input, .pi-style__body .filter-input__container {
+    
+}
+
+
+.pi-style__body .pi-input-label {
+    
+}
+
+
+.pi-style__body input[disabled], .pi-style__body .pi-input[disabled], .pi-style__body .inline-placeholder-input[disabled], .pi-style__body .filter-input__container[disabled] {
+    
+}
+
+
+a {
+    color: #0C0F14;
+    fill: #81810C0F148D;
+}
+
+
+a:hover {
+    color: #0C0F14;
+}
+
+
+a:visited {
+    
+}
+
+
+.pi-style__page-top-nav {
+    background: #222C3C;
+    color: #FFFFFF;
+}
+
+
+.pi-style__page-top-nav a {
+    color: #FFFFFF;
+}
+
+
+.pi-style__page-top-nav a:hover {
+    
+}
+
+
+.pi-style__page-top-nav .pi-style__nav-menu a {
+    color: #0C0F14;
+}
+
+
+.pi-style__page-top-nav .pi-style__nav-menu a:hover {
+    
+}
+
+
+.pi-style__page-top-nav__logo {
+    margin: -1px 0px 0px 0px;
+    padding: 0px 0px 4px 0px;
+}
+
+
+.pi-style__page-content {
+    
+}
+
+
+.pi-style__panel {
+    background: #ffffff;
+}
+
+
+.pi-style__panel > .panel-heading {
+    background: #222C3C;
+    color: #FFFFFF;
+}
+
+
+.pi-style__panel .panel-footer {
+    
+}
+
+
+.pi-style__drawer {
+    background: #ffffff;
+    color: #8b8b8b;
+}
+
+
+.pi-style__drawer .category-object-area-inputs {
+    
+}
+
+
+.pi-style__drawer a {
+    
+}
+
+
+.pi-style__drawer a:hover {
+    
+}
+
+
+.pi-style__drawer .pi-input {
+    
+}
+
+
+.pi-style__drawer .pi-input[disabled] {
+    
+}
+
+
+.pi-style__category-objects-top-panel {
+    background: #FFFFFF;
+    margin: 5px;
+    color: #0C0F14;
+    box-shadow: none;
+}
+
+
+.pi-style__category-objects-top-panel .category-object-area-inputs {
+    
+}
+
+
+.pi-style__category-objects-top-panel a {
+    
+}
+
+
+.pi-style__category-objects-top-panel a:hover {
+    
+}
+
+
+.pi-style__category-objects-top-panel .pi-input {
+    
+}
+
+
+.pi-style__category-objects-top-panel .pi-input[disabled] {
+    
+}
+
+
+.pi-style__progress-indicator {
+    background-image: linear-gradient(to right,#67c4d1,#b3e1e8);
+    color: #ffffff;
+}
+
+
+.pi-style__btn-primary {
+    background: #67c4d1;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+
+.pi-style__btn-primary[disabled] {
+    
+}
+
+
+.pi-style__btn-primary:hover, .pi-style__btn-primary:focus {
+    background: #85d0da;
+}
+
+
+.pi-style__btn-primary[disabled]:hover, .pi-style__btn-primary[disabled]:focus {
+    
+}
+
+
+.pi-style__btn-primary:active, .pi-style__btn-primary.active, .open .pi-style__btn-primary.btn-primary, .pi-style__btn-primary:active:hover, .pi-style__btn-primary:active:focus {
+    
+}
+
+
+.pi-style__btn-primary[disabled]:active, .pi-style__btn-primary[disabled].active, .open .pi-style__btn-primary.btn-primary[disabled] {
+    
+}
+
+
+.pi-style__btn-default {
+    background: #FFFFFF;
+}
+
+
+.pi-style__btn-default[disabled] {
+    
+}
+
+
+.pi-style__btn-default:hover, .pi-style__btn-default:focus {
+    
+}
+
+
+.pi-style__btn-default[disabled]:hover, .pi-style__btn-default[disabled]:focus {
+    
+}
+
+
+.pi-style__btn-default:active, .pi-style__btn-default.active, .open .pi-style__btn-default.btn-default, .pi-style__btn-default:active:hover, .pi-style__btn-default:active:focus {
+    
+}
+
+
+.pi-style__btn-default[disabled]:active, .pi-style__btn-default[disabled].active, .open .pi-style__btn-default.btn-default[disabled] {
+    
+}
+
+
+.pi-style__btn-danger {
+    
+}
+
+
+.pi-style__btn-danger[disabled] {
+    
+}
+
+
+.pi-style__btn-danger:hover, .pi-style__btn-danger:focus {
+    
+}
+
+
+.pi-style__btn-danger[disabled]:hover, .pi-style__btn-danger[disabled]:focus {
+    
+}
+
+
+.pi-style__btn-danger:active, .pi-style__btn-danger.active, .open .pi-style__btn-danger.btn-danger, .pi-style__btn-danger:active:hover, .pi-style__btn-danger:active:focus {
+    
+}
+
+
+.pi-style__btn-danger[disabled]:active, .pi-style__btn-danger[disabled].active, .open .pi-style__btn-danger.btn-danger[disabled] {
+    
+}
+
+
+.pi-style__btn-warning {
+    
+}
+
+
+.pi-style__btn-warning[disabled] {
+    
+}
+
+
+.pi-style__btn-warning:hover, .pi-style__btn-warning:focus {
+    
+}
+
+
+.pi-style__btn-warning[disabled]:hover, .pi-style__btn-warning[disabled]:focus {
+    
+}
+
+
+.pi-style__btn-warning:active, .pi-style__btn-warning.active, .open .pi-style__btn-warning.btn-warning, .pi-style__btn-warning:active:hover, .pi-style__btn-warning:active:focus {
+    
+}
+
+
+.pi-style__btn-warning[disabled]:active, .pi-style__btn-warning[disabled].active, .open .pi-style__btn-warning.btn-warning[disabled] {
+    
+}
+
+
+.pi-style__chart-panel {
+    background: #FFFFFF;
+    margin: 5px;
+    color: #0C0F14;
+    box-shadow: none;
+}
+
+
+.pi-style__chart-panel .paper-button {
+    box-shadow: none;
+}
+
+
+.pi-style__chart-panel:hover .paper-button {
+    
+}
+
+
+.pi-style__chart-panel .pi-style__chart-panel__category-link-button {
+    
+}
+
+
+.pi-style__chart-panel .pi-style__chart-panel__chart-link-button {
+    
+}
+
+
+.pi-style__chart-panel__header {
+    background: #FFFFFF;
+    color: #0C0F14;
+    font-weight: 600;
+}
+
+
+.pi-style__chart-panel__header .paper-button {
+    
+}
+
+
+.pi-style__chart-panel__chart-title {
+    background: #FFFFFF;
+    color: #0C0F14;
+    font-size: 14px;
+    font-weight: 600;
+    padding-top: 8px;
+}
+
+
+.pi-style__chart-panel__chart-subtitle {
+    
+}
+
+
+.pi-style__chart-panel__chart-menu {
+    
+}
+
+
+.pi-style__chart-fullscreen {
+    
+}
+
+
+.pi-style__chart__x-axis-title {
+    font-family: "Red Hat Text", sans-serif;
+    color: #0C0F14;
+}
+
+
+.pi-style__chart__x-axis-value {
+    font-weight: normal;
+    font-family: "Red Hat Text", sans-serif;
+    color: #0C0F14;
+}
+
+
+.pi-style__chart__null-x-axis-value {
+    display: none;
+}
+
+
+.pi-style__chart__y-axis-title {
+    font-family: "Red Hat Text", sans-serif;
+    color: #0C0F14;
+}
+
+
+.pi-style__chart__y-axis-value {
+    font-weight: normal;
+    font-family: "Red Hat Text", sans-serif;
+    color: #0C0F14;
+}
+
+
+.pi-style__chart__legend-title {
+    font-family: "Red Hat Text", sans-serif;
+    color: #0C0F14;
+}
+
+
+.pi-style__chart__legend-value {
+    font-family: "Red Hat Text", sans-serif;
+    color: #0C0F14;
+}
+
+
+.pi-style__chart__null-legend-value {
+    display: none;
+}
+
+
+.pi-style__chart__null-text-value {
+    display: none;
+}
+
+
+.pi-style__chart__tooltip-text {
+    font-family: "Red Hat Text", sans-serif;
+    color: #0C0F14;
+}
+
+
+.pi-style__chart__data-value {
+    font-family: "Red Hat Text", sans-serif;
+}
+
+
+.pi-style__chart__pie-and-donut__data-value {
+    font-family: "Red Hat Text", sans-serif;
+}
+
+
+.pi-style__chart__traffic-light__data-value {
+    font-family: "Red Hat Text", sans-serif;
+}
+
+
+.pi-style__chart__light-bulb__data-value {
+    font-family: "Red Hat Text", sans-serif;
+}
+
+
+.pi-style__chart__speedometer__data-title {
+    font-family: "Red Hat Text", sans-serif;
+}
+
+
+.pi-style__chart__speedometer__data-value {
+    font-family: "Red Hat Text", sans-serif;
+}
+
+
+.pi-style__chart__speedometer__tick {
+    font-family: "Red Hat Text", sans-serif;
+}
+
+
+.pi-style__table {
+    color: #0C0F14;
+    margin: 20px;
+}
+
+
+.ag-header-row {
+    background: #ffffff;
+}
+
+
+.pi-style__rotated-table-header-row {
+    background: #ffffff;
+    padding: 11px 0px;
+}
+
+
+.pi-style__table__body-row {
+    background: transparent;
+}
+
+
+.pi-style__table__body-row.ag-row-odd {
+    
+}
+
+
+.pi-style__table__body-row.ag-row-hover {
+    background: #ffffff;
+    color: #ffffff;
+}
+
+
+.pi-style__table__body-row.ag-row-hover .pi-style__table-body-cell {
+    background: rgba(120, 125, 130, 0.3) !important;
+}
+
+
+.pi-style__table-header-cell {
+    background: transparent;
+    color: #0C0F14;
+    font-size: 14px;
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+.pi-style__table-header-cell.pi-style__table-header-cell--is-numeric {
+    
+}
+
+
+.pi-style__table-header-cell.pi-style__table-header-cell--is-date {
+    
+}
+
+
+.pi-style__table-header-cell.pi-style__table-header-cell--is-text {
+    
+}
+
+
+.pi-style__table-header-cell .pi-style__table-header-cell__null-value {
+    display: none;
+}
+
+
+.pi-style__table-body-cell {
+    font-size: 14px;
+    font-weight: normal;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+.pi-style__table-body-cell.pi-style__table-body-cell--is-numeric {
+    text-align: right;
+}
+
+
+.pi-style__table-body-cell.pi-style__table-body-cell--is-date {
+    text-align: center;
+}
+
+
+.pi-style__table-body-cell.pi-style__table-body-cell--is-text {
+    text-align: left;
+}
+
+
+.pi-style__table-body-cell.pi-style__table-body-cell--is-total-row {
+    background-color: #ffffff;
+    font-weight: bold;
+    color: #0C0F14;
+}
+
+
+.pi-style__table-body-cell.pi-style__table-body-cell--is-total-col {
+    background-color: #ffffff;
+    font-weight: bold;
+    color: #0C0F14;
+}
+
+
+.pi-style__table-body-cell.ag-cell-focus {
+    background: #D7D7D7;
+    color: #0C0F14;
+}
+
+
+.pi-style__table__body-row.ag-row-focus {
+    background: #D7D7D7;
+    color: #0C0F14;
+}
+
+
+.pi-style__table-body-cell .pi-style__table-body-cell__null-value {
+    display: none;
+}
+
+
+.chart-panel.pi-style__card {
+    background: #FFFFFF;
+}
+
+
+.chart-panel.pi-style__card .paper-button {
+    opacity: 0;
+    transition: 0.1s linear;
+}
+
+
+.chart-panel.pi-style__card:hover .paper-button {
+    opacity: 1;
+}
+
+
+.pi-style__card__chart-title {
+    display: none;
+}
+
+
+.pi-style__pdf-chart-heading {
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+.pi-style__pdf-chart-title {
+    font-size: 16px;
+}
+
+
+.pi-style__pdf-chart-subtitle {
+    
+}
+
+
+.pi-style__pdf-header {
+    font-size: 10px;
+    width: 100%;
+}
+
+
+.pi-style__pdf-header-logo {
+    float: right;
+    margin-right: 32px;
+    margin-top: 16px;
+}
+
+
+.pi-style__pdf-footer {
+    font-size: 12px;
+    width: 100%;
+}
+
+
+.pi-style__pdf-footer-date {
+    float: left;
+    margin-left: 32px;
+}
+
+
+.pi-style__pdf-footer-pages {
+    float: right;
+    margin-right: 32px;
+}
+
+
+.pi-style__pdf-help-text {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+
+.pi-style__login-screen__background-image {
+    background-position: bottom right;
+}
+
+
+.pi-style__login-screen__body {
+    
+}
+
+
+.pi-style__login-screen__logo {
+    margin-top: 62px;
+    height: 40px;
+}
+
+
+.pi-style__login-screen__panel {
+    background: #D7D7D7;
+    min-width: 356px;
+    box-shadow: none;
+}
+
+
+.pi-style__login-screen__panel__header {
+    display: none;
+}
+
+
+.pi-style__login-screen__panel__header__icon {
+    display: none;
+}
+
+
+.pi-style__login-screen__panel__body {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+
+.pi-style__login-screen__panel__footer {
+    padding: 0px 12px;
+}
+
+
+.login-panel .pi-input.pi-style__login-screen__panel__input {
+    margin-bottom: 16px;
+}
+
+
+.login-panel .pi-style__login-screen__panel__input__label {
+    
+}
+
+
+.login-panel .pi-input.pi-style__login-screen__panel__input__field {
+    background: #ffffff;
+    color: #000000;
+    height: 40px;
+    padding: 4px 8px;
+    font-weight: bold;
+    border-bottom: none;
+}
+
+
+.pi-style__login-screen__panel__button-section {
+    text-align: right;
+}
+
+
+.pi-style__login-screen__panel__button-section__button {
+    background: #D80751;
+    color: #FFFFFF;
+    padding: 12px;
+    font-weight: bold;
+    box-shadow: none;
+    border-radius: 0px;
+}
+
+
+.pi-style__login-screen__panel__button {
+    
+}
+
+
+.pi-style__config-panel {
+    background: #ffffff;
+}
+
+
+.pi-style__config-panel__empty-space {
+    background: #cacaca;
+}
+
+
+.pi-style__config-panel__empty-space .config-panel__empty-panel-instruction {
+    font-size: 18px;
+    color: rgba(136, 136, 136, 0.7);
+}
+
+
+.pi-style__config-panel__front-panel {
+    background: #ffffff;
+}
+
+
+.pi-style__config-panel__read-only-panel {
+    background: #F5F5F5;
+}
+
+
+.pi-style__config-panel__disabled-panel {
+    background: #f7f7f7;
+}
+
+
+.pi-style__config-panel__tabs {
+    
+}
+
+
+.pi-style__config-panel__tabs__tab {
+    
+}
+
+
+.pi-style__config-panel__tabs__tab:hover {
+    
+}
+
+
+.pi-style__config-panel__tabs__tab.is-active {
+    background: #ffffff;
+}
+
+
+.pi-style__table-group-header-cell {
+    background: transparent;
+    color: #0C0F14;
+    font-size: 14px;
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+.pi-style__table-group-header-cell.pi-style__table-group-header-cell--is-numeric {
+    
+}
+
+
+.pi-style__table-group-header-cell.pi-style__table-group-header-cell--is-date {
+    
+}
+
+
+.pi-style__table-group-header-cell.pi-style__table-group-header-cell--is-text {
+    
+}
+
+
+.pi-style__table-group-header-cell .pi-style__table-group-header-cell__null-value {
+    display: none;
+}
+
+
+.pi-style__table__body-row.ag-row-selected {
+    background: #D7D7D7;
+    color: #0C0F14;
+}

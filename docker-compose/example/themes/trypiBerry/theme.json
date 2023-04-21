@@ -1,0 +1,85 @@
+{
+    "customFontUrls": [
+        {
+            "orderingIndex": 0,
+            "url": "https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+        },
+        {
+            "orderingIndex": 1,
+            "url": "https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
+        }
+    ],
+    "themeConfig": {
+        "loginScreenLogo": "lets_play_with_pi.png",
+        "loginScreenBackgroundImage": "piLogin-01.png",
+        "favicon": null,
+        "chartGridLineColor": null,
+        "dashboardLogo": "pink_picon.png",
+        "migrationVersion": 1006,
+        "showLineDots": false,
+        "alwaysShowLogo": true,
+        "chartLightBulbBorderDisplay": true,
+        "turnOffTooltips": false,
+        "appleTouchIcon": null,
+        "tableMinColumnWidth": null,
+        "pdfLogo": null,
+        "loadingIcon": "picon_animated.png",
+        "tableRowHeight": null
+    },
+    "themeColors": [
+        {
+            "description": "colour1",
+            "colorCode": "#e03974",
+            "id": 630363460,
+            "orderingIndex": 0
+        },
+        {
+            "description": "colour2",
+            "colorCode": "#e86a97",
+            "id": 258649450,
+            "orderingIndex": 1
+        },
+        {
+            "description": "colour3",
+            "colorCode": "#a4427c",
+            "id": 732280414,
+            "orderingIndex": 2
+        },
+        {
+            "description": "colour4",
+            "colorCode": "#aaafb2",
+            "id": 976994873,
+            "orderingIndex": 3
+        },
+        {
+            "description": "colour5",
+            "colorCode": "#818080",
+            "id": 988333551,
+            "orderingIndex": 4
+        },
+        {
+            "description": "colour6",
+            "colorCode": "#d3d5d8",
+            "id": 928756022,
+            "orderingIndex": 5
+        },
+        {
+            "description": "colour7",
+            "colorCode": "#bcbfc4",
+            "id": 239121291,
+            "orderingIndex": 6
+        },
+        {
+            "description": "colour8",
+            "colorCode": "#90959d",
+            "id": 660647818,
+            "orderingIndex": 7
+        },
+        {
+            "description": "colour9",
+            "colorCode": "#d80751",
+            "id": 691618817,
+            "orderingIndex": 8
+        }
+    ]
+}

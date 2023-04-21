@@ -1,0 +1,76 @@
+{
+    "customFontUrls": [
+        
+    ],
+    "themeConfig": {
+        "loginScreenBackgroundImage": null,
+        "loginScreenLogo": "pink_picon.png",
+        "chartGridLineColor": null,
+        "migrationVersion": 1006,
+        "dashboardLogo": "white_picon.png",
+        "showLineDots": false,
+        "alwaysShowLogo": false,
+        "chartLightBulbBorderDisplay": true,
+        "turnOffTooltips": false,
+        "tableMinColumnWidth": null,
+        "pdfLogo": "pink_picon.png",
+        "loadingIcon": "picon_animated.png",
+        "tableRowHeight": null
+    },
+    "themeColors": [
+        {
+            "description": "#33CEA6",
+            "colorCode": "#33cea6",
+            "id": 348,
+            "orderingIndex": 0
+        },
+        {
+            "description": "#0DB8D1",
+            "colorCode": "#0db8d1",
+            "id": 349,
+            "orderingIndex": 1
+        },
+        {
+            "description": "#0096FF",
+            "colorCode": "#0096ff",
+            "id": 350,
+            "orderingIndex": 2
+        },
+        {
+            "description": "#376BFF",
+            "colorCode": "#376bff",
+            "id": 351,
+            "orderingIndex": 3
+        },
+        {
+            "description": "#7D35FF",
+            "colorCode": "#7d35ff",
+            "id": 352,
+            "orderingIndex": 4
+        },
+        {
+            "description": "#C300FF",
+            "colorCode": "#c300ff",
+            "id": 353,
+            "orderingIndex": 5
+        },
+        {
+            "description": "#D408B6",
+            "colorCode": "#d408b6",
+            "id": 354,
+            "orderingIndex": 6
+        },
+        {
+            "description": "#E5116D",
+            "colorCode": "#e5116d",
+            "id": 355,
+            "orderingIndex": 7
+        },
+        {
+            "description": "#8B8B8B",
+            "colorCode": "#8b8b8b",
+            "id": 347,
+            "orderingIndex": 8
+        }
+    ]
+}
