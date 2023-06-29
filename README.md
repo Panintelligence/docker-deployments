@@ -44,6 +44,43 @@ cd <code source directory>/docker-compose/example
 docker-compose up -d
 ```
 
+## Volumes
+
+for persistence or modification of certain files or features, it's well worth mounting the following volumes for your containers:
+
+### Themes
+
+If this directory is "empty" on first load of pi, default themes will populate this directory.
+
+please mount this directory: `/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/themes`
+
+### Images
+
+`/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/images`
+
+### Custom_JDBC
+Custom JDBC drivers permit you to use a freeflow jdbc config within the dashboard.  Any JDBC jar file dropped into this folder will appear on the application class path and be available for use in Pi
+
+`/var/panintelligence/Dashboard/tomcat/custom_jdbc_drivers`
+
+### SVG
+
+This directory containers the custom image SVG maps.
+
+`/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/svg`
+
+### Logs
+
+Currently, there's no housekeeping on the logs  inside the container, so it's recommended that you volume out the logs to give space for growth.  This is especially important when deploying to containers that feature a fixed root volume, such as AWS Fargate.
+
+`/var/panintelligence/Dashboard/tomcat/logs`
+
+### Keys
+
+These keys are shared with the scheduler.  Its important that the same path is mounted on the scheduler container.  This will allow the scheduler and dashboard application to talk with one another over an encrypted channel.
+
+`/var/panintelligence/Dashboard/keys`
+
 ## Further deployment configuration
 For additional configuration options, see our [configuration Environment Variables documentation](https://panintelligence.atlassian.net/wiki/spaces/PD/pages/34374123/Environment+Variables).
 
