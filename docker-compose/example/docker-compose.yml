@@ -38,6 +38,9 @@ services:
     volumes:
       - panintelligence_keys:/var/panintelligence/Dashboard/keys/
       - ./custom_jdbc:/var/panintelligence/Dashboard/tomcat/custom_jdbc_drivers
+      - images:/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/images
+      - themes:/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/themes
+      - svg:/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/svg
   renderer:
     image: ${RENDERER_IMAGE}
     environment:
@@ -74,3 +77,6 @@ services:
 volumes:
   db_data:
   panintelligence_keys:
+  images:
+  themes:
+  svg:
