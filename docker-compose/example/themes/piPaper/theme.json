@@ -10,19 +10,15 @@
         }
     ],
     "themeConfig": {
+        "dashboardLogo": "white_picon.png",
         "loginScreenBackgroundImage": "pi_login_01.png",
         "loginScreenLogo": "lets_play_with_pi.png",
-        "chartGridLineColor": null,
-        "migrationVersion": 1006,
-        "dashboardLogo": "white_picon.png",
-        "showLineDots": false,
         "alwaysShowLogo": true,
+        "chartGridLineColor": null,
         "chartLightBulbBorderDisplay": true,
         "turnOffTooltips": false,
-        "tableMinColumnWidth": null,
         "pdfLogo": null,
-        "loadingIcon": "picon_animated.png",
-        "tableRowHeight": null
+        "loadingIcon": "picon_animated.png"
     },
     "themeColors": [
         {
