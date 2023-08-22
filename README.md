@@ -13,7 +13,7 @@ Please email support@panintelligence.com with the following information:
 
 > Company: Name of your company
 >
-> Username: Your [docker hub](https://hub.docker.com/) username
+> Username: Your [github](https://www.github.com/) username
 
 # Deployment Methods
 
@@ -24,11 +24,11 @@ Please email support@panintelligence.com with the following information:
 ## Containers
 For this method, you need the following:
 * The container images:
-  * [panintelligence/renderer](https://hub.docker.com/r/panintelligence/renderer)
-  * [panintelligence/excel-reader](https://hub.docker.com/r/panintelligence/excel-reader)
-  * [panintelligence/scheduler](https://hub.docker.com/r/panintelligence/scheduler) (if your licence includes piReports)
-  * [panintelligence/pirana](https://hub.docker.com/r/panintelligence/pirana) (if your licence includes piAnalytics)
-  * [panintelligence/server](https://hub.docker.com/r/panintelligence/server)
+  * [panintelligence/renderer](https://github.com/orgs/pi-cr/packages/container/package/renderer)
+  * [panintelligence/excel-reader](https://github.com/orgs/pi-cr/packages/container/package/excel-reader)
+  * [panintelligence/scheduler](https://github.com/orgs/pi-cr/packages/container/package/scheduler) (if your licence includes piReports)
+  * [panintelligence/pirana](https://github.com/orgs/pi-cr/packages/container/package/pirana) (if your licence includes piAnalytics)
+  * [panintelligence/server](https://github.com/orgs/pi-cr/packages/container/package/server)
 * A licence from your account manager
 * Access to a filesystem of some sort to persist your custom themes and the shared keys between `server` and `scheduler`
 
