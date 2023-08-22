@@ -456,39 +456,35 @@ a:visited {
 }
 
 
-.ag-header-row {
-    background: #ffffff;
-}
-
-
-.pi-style__rotated-table-header-row {
+.pi-style__table thead tr {
     background: #ffffff;
     padding: 11px 0px;
 }
 
 
-.pi-style__table__body-row {
+tr.pi-style__table__body-row {
     background: transparent;
+    border: 1px solid transparent;
 }
 
 
-.pi-style__table__body-row.ag-row-odd {
+.pi-style__table .pi-style__table__body-row:nth-child(odd) {
     
 }
 
 
-.pi-style__table__body-row.ag-row-hover {
+.pi-style__table .pi-style__table__body-row:hover {
     background: #ffffff;
     color: #ffffff;
 }
 
 
-.pi-style__table__body-row.ag-row-hover .pi-style__table-body-cell {
+.pi-style__table .pi-style__table__body-row:hover td {
     background: rgba(120, 125, 130, 0.3) !important;
 }
 
 
-.pi-style__table-header-cell {
+th.pi-style__table-header-cell {
     background: transparent;
     color: #81818D;
     font-size: 14px;
@@ -518,7 +514,7 @@ a:visited {
 }
 
 
-.pi-style__table-body-cell {
+td.pi-style__table-body-cell {
     font-size: 14px;
     font-weight: normal;
     padding-top: 5px;
@@ -555,13 +551,7 @@ a:visited {
 }
 
 
-.pi-style__table-body-cell.ag-cell-focus {
-    background: #D7D7D7;
-    color: #81818D;
-}
-
-
-.pi-style__table__body-row.ag-row-focus {
+.pi-style__table-body-cell.pi-style__table-body-cell--is-in-selected-row {
     background: #D7D7D7;
     color: #81818D;
 }
@@ -780,40 +770,4 @@ a:visited {
 
 .pi-style__config-panel__tabs__tab.is-active {
     background: #ffffff;
-}
-
-
-.pi-style__table-group-header-cell {
-    background: transparent;
-    color: #81818D;
-    font-size: 14px;
-    font-weight: bold;
-    vertical-align: middle;
-    text-align: center;
-}
-
-
-.pi-style__table-group-header-cell.pi-style__table-group-header-cell--is-numeric {
-    
-}
-
-
-.pi-style__table-group-header-cell.pi-style__table-group-header-cell--is-date {
-    
-}
-
-
-.pi-style__table-group-header-cell.pi-style__table-group-header-cell--is-text {
-    
-}
-
-
-.pi-style__table-group-header-cell .pi-style__table-group-header-cell__null-value {
-    display: none;
-}
-
-
-.pi-style__table__body-row.ag-row-selected {
-    background: #D7D7D7;
-    color: #81818D;
 }

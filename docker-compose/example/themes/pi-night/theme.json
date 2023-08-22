@@ -1,22 +1,4 @@
 {
-    "customFontUrls": [
-        
-    ],
-    "themeConfig": {
-        "loginScreenBackgroundImage": null,
-        "loginScreenLogo": "pink_picon.png",
-        "chartGridLineColor": "#6c6c6c",
-        "migrationVersion": 1006,
-        "dashboardLogo": "white_picon.png",
-        "showLineDots": false,
-        "alwaysShowLogo": false,
-        "chartLightBulbBorderDisplay": true,
-        "turnOffTooltips": false,
-        "tableMinColumnWidth": null,
-        "pdfLogo": "pink_picon.png",
-        "loadingIcon": "picon_animated.png",
-        "tableRowHeight": null
-    },
     "themeColors": [
         {
             "description": "#33CEA6",
@@ -72,5 +54,16 @@
             "id": 347,
             "orderingIndex": 8
         }
-    ]
+    ],
+    "themeConfig": {
+        "dashboardLogo": "white_picon.png",
+        "loginScreenBackgroundImage": null,
+        "loginScreenLogo": "pink_picon.png",
+        "alwaysShowLogo": false,
+        "loadingIcon": "picon_animated.png",
+        "chartGridLineColor": "#6c6c6c",
+        "chartLightBulbBorderDisplay": true,
+        "turnOffTooltips": false,
+        "pdfLogo": "pink_picon.png"
+    }
 }
