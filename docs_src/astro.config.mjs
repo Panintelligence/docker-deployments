@@ -4,7 +4,7 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://panintelligence.github.io',
-	base: '/docker-deployments',
+	base: '/docker-deployments/docs',
 	integrations: [
 		starlight({
 			title: 'Panintelligence Container Deployments',
