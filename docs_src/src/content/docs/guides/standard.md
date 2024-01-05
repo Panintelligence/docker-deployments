@@ -1,9 +1,9 @@
 ---
-title: Standard Basic Example
+title: Standard Example
 description: Our most basic container deployment style
 ---
 
-This files in the standard directory represent a basic pi environment.
+This files in the [standard](https://github.com/Panintelligence/docker-deployments/tree/docker_deployments_improvements/standard) directory represent a basic pi environment.
 
 ### Environment variables
 Copy `template.env` to `.env` and update the values before you start.
