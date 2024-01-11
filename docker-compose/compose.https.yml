@@ -1,0 +1,11 @@
+version: "3.0"
+services:
+  dashboard:
+    environment:
+      PI_TOMCAT_USE_HTTPS: "true"
+      PI_TOMCAT_HTTPS_CERT: "/var/panintelligence/certs/fullchain.pem"
+      PI_TOMCAT_HTTPS_CERT_KEY: "/var/panintelligence/certs/privkey.pem"
+      PI_TOMCAT_COOKIE_SECURE: "true"
+    volumes:
+      - ./certs:/var/panintelligence/certs/
+ 
