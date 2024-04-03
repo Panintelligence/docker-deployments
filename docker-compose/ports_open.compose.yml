@@ -1,0 +1,14 @@
+version: "3.0"
+services:
+  database:
+    ports:
+      - 3306:3306 # Opens db port directly
+  renderer:
+    ports:
+      - 9915:9915
+  pirana:
+    ports:
+      - 9918:9918
+  scheduler:
+    ports:
+      - 9917:9917

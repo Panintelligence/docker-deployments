@@ -1,0 +1,63 @@
+version: "3.0"
+services:
+  dashboard:
+    profiles:
+      - dashboard
+      - full
+    image: ${DASHBOARD_IMAGE}
+    ports:
+      - 8224:8224
+    environment:
+      PI_DB_HOST: database
+      PI_DB_PASSWORD: panintelligence
+      PI_DB_USERNAME: root
+      PI_DB_SCHEMA_NAME: dashboard
+      PI_DB_PORT: 3306
+      PI_EXTERNAL_DB: "true"
+      PI_LICENCE: ${LICENCE}
+      PI_TOMCAT_MAX_MEMORY: 1792 # Set the maximum memory to a size suitable for your environment
+      RENDERER_DASHBOARD_URL: http://dashboard:8224/pi
+    volumes:
+      - panintelligence_keys:/var/panintelligence/Dashboard/keys/
+  renderer:
+    profiles:
+      - renderer
+      - full
+    image: ${RENDERER_IMAGE}
+    environment:
+      RENDERER_LOG_LEVELS: info,error,warn,verbose,debug
+  pirana:
+    profiles:
+      - pirana
+      - full
+    image: ${PIRANA_IMAGE}
+  scheduler:
+    profiles:
+      - scheduler
+      - full
+    image: ${SCHEDULER_IMAGE}
+    environment:
+      SCHEDULER_DASHBOARD_URL: http://dashboard:8224/pi
+      PI_DB_HOST: database
+      PI_DB_PASSWORD: panintelligence
+      PI_DB_USERNAME: root
+      PI_DB_SCHEMA_NAME: dashboard
+      PI_DB_PORT: 3306
+    volumes:
+      - panintelligence_keys:/var/panintelligence/Dashboard/keys/
+  database:
+    profiles:
+      - database
+      - full
+    image: mariadb:${MARIADB_VERSION}
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+      MARIADB_DATABASE: dashboard
+      LANG: C.UTF-8
+    command: --lower_case_table_names=1 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./database_import:/docker-entrypoint-initdb.d # Use this to a SQL dump automatically from the folder (only for a new db_data volume)
+volumes:
+  db_data:
+  panintelligence_keys:
