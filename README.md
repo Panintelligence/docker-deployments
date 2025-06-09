@@ -69,11 +69,6 @@ This directory containers the custom image SVG maps.
 
 `/var/panintelligence/Dashboard/tomcat/webapps/panMISDashboardResources/svg`
 
-### Logs
-
-Currently, there's no housekeeping on the logs  inside the container, so it's recommended that you volume out the logs to give space for growth.  This is especially important when deploying to containers that feature a fixed root volume, such as AWS Fargate.
-
-`/var/panintelligence/Dashboard/tomcat/logs`
 
 ### Keys
 
