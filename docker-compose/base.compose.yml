@@ -16,7 +16,7 @@ services:
       PI_EXTERNAL_DB: "true"
       PI_LICENCE: ${LICENCE}
       PI_TOMCAT_MAX_MEMORY: 1792 # Set the maximum memory to a size suitable for your environment
-      RENDERER_DASHBOARD_URL: http://dashboard:28748/pi # Using this port helps to avoid issues with https certificates, but don't expose it
+      RENDERER_DASHBOARD_URL: http://dashboard:28748/pi # Using this port helps to avoid issues with self signed https certificates, but don't expose it. If you use genuine trusted certificates you should the main app port instead.
       PI_VARIABLE_PAN_RENDERER_URL: http://renderer:9915
       PI_VARIABLE_PAN_SCHEDULER_URL: http://scheduler:9917
       PI_VARIABLE_ANALYTICS_SERVER_URL: http://pirana:9918
