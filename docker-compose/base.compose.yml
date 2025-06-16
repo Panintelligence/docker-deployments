@@ -16,7 +16,11 @@ services:
       PI_EXTERNAL_DB: "true"
       PI_LICENCE: ${LICENCE}
       PI_TOMCAT_MAX_MEMORY: 1792 # Set the maximum memory to a size suitable for your environment
-      RENDERER_DASHBOARD_URL: http://dashboard:8224/pi
+      RENDERER_DASHBOARD_URL: http://dashboard:28748/pi # Using this port helps to avoid issues with self signed https certificates, but don't expose it. If you use genuine trusted certificates you should the main app port instead.
+      PI_VARIABLE_PAN_RENDERER_URL: http://renderer:9915
+      PI_VARIABLE_PAN_SCHEDULER_URL: http://scheduler:9917
+      PI_VARIABLE_ANALYTICS_SERVER_URL: http://pirana:9918
+    restart: unless-stopped
     volumes:
       - panintelligence_keys:/var/panintelligence/Dashboard/keys/
   renderer:
@@ -26,11 +30,13 @@ services:
     image: ${RENDERER_IMAGE}
     environment:
       RENDERER_LOG_LEVELS: info,error,warn,verbose,debug
+    restart: unless-stopped
   pirana:
     profiles:
       - pirana
       - full
     image: ${PIRANA_IMAGE}
+    restart: unless-stopped
   scheduler:
     profiles:
       - scheduler
@@ -43,18 +49,20 @@ services:
       PI_DB_USERNAME: root
       PI_DB_SCHEMA_NAME: dashboard
       PI_DB_PORT: 3306
+    restart: unless-stopped
     volumes:
       - panintelligence_keys:/var/panintelligence/Dashboard/keys/
   database:
     profiles:
       - database
       - full
-    image: mariadb:${MARIADB_VERSION}
+    image: docker.io/mariadb:${MARIADB_VERSION}
     environment:
       MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
       MARIADB_DATABASE: dashboard
       LANG: C.UTF-8
     command: --lower_case_table_names=1 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    restart: unless-stopped
     volumes:
       - db_data:/var/lib/mysql
       - ./database_import:/docker-entrypoint-initdb.d # Use this to a SQL dump automatically from the folder (only for a new db_data volume)
