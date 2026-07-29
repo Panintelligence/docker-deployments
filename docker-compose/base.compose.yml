@@ -16,10 +16,11 @@ services:
       PI_EXTERNAL_DB: "true"
       PI_LICENCE: ${LICENCE}
       PI_TOMCAT_MAX_MEMORY: 1792 # Set the maximum memory to a size suitable for your environment or use PI_TOMCAT_MAX_MEMORY_PERCENTAGE with a value between 20 and 60.
-      RENDERER_DASHBOARD_URL: http://dashboard:28748/pi # Using this port helps to avoid issues with self signed https certificates, but don't expose it. If you use genuine trusted certificates you should the main app port instead.
+      PI_ADDITIONAL_SERVICES_PI_CALLBACK_URL: http://dashboard:28748/pi # Using this port helps to avoid issues with self signed https certificates, but don't expose it. If you use genuine trusted certificates you should the main app port instead.
       PI_VARIABLE_PAN_RENDERER_URL: http://renderer:9915
       PI_VARIABLE_PAN_SCHEDULER_URL: http://scheduler:9917
       PI_VARIABLE_ANALYTICS_SERVER_URL: http://pirana:9918
+      PI_VARIABLE_PI_AI_URL: http://pi-ai:9919
     restart: unless-stopped
     volumes:
       - panintelligence_keys:/var/panintelligence/Dashboard/keys/
@@ -52,6 +53,14 @@ services:
     restart: unless-stopped
     volumes:
       - panintelligence_keys:/var/panintelligence/Dashboard/keys/
+  pi-ai:
+    profiles:
+      - pi-ai
+      - full
+    image: ${PI_AI_IMAGE}
+    environment:
+      PI_AI_PORT: 9919
+      PI_AI_ALLOWED_URLS: http://dashboard:8224
   database:
     profiles:
       - database
