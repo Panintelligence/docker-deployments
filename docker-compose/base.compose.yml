@@ -60,7 +60,7 @@ services:
     image: ${PI_AI_IMAGE}
     environment:
       PI_AI_PORT: 9919
-      PI_AI_ALLOWED_URLS: http://dashboard:8224
+      PI_AI_ALLOWED_URLS: http://dashboard:28748
   database:
     profiles:
       - database
